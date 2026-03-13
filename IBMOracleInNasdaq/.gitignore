@@ -1,0 +1,12 @@
+# Binaries
+MarketMonitor
+build/
+*.out
+*.exe
+
+# IDEs
+.vscode/
+.idea/
+
+# OS
+.DS_Store
