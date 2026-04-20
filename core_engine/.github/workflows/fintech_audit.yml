@@ -1,0 +1,35 @@
+name: 2026 Fintech Stack Audit
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-python: '3.11'
+
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install yfinance
+
+    - name: Run Market Pulse & Client Trace Audit
+      run: |
+        python3 campaign_trace.py
+        python3 nasdaq_engine.py
+
+    - name: Enterprise Compliance Check
+      run: |
+        echo "Verifying Zero-Copy Architecture Compliance..."
+        # Ensure no sensitive IDs are in the output
+        ! grep -r "0009-0004-2154-7555" .

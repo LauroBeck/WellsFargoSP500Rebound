@@ -1,0 +1,14 @@
+# Security & Auth
+.env
+*.pem
+*.key
+bbg_enterprise.log
+strategic_audit.csv
+
+# Python Environment
+lab_env/
+__pycache__/
+*.py[cod]
+
+# OS junk
+.DS_Store
