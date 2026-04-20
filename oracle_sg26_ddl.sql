@@ -1,0 +1,10 @@
+-- PROJECT: Stargate Node v2
+-- ACTION: Sovereign DDL Materialization
+-- TARGET: 7,172.23 Reclamation
+CREATE TABLE SG26_RECALIBRATION_LOG (
+    CURRENT_INDEX VARCHAR2(20),
+    STATUS VARCHAR2(50),
+    TARGET_PX NUMBER,
+    LAST_UPDATE TIMESTAMP
+);
+-- [Rest of your DDL here]
